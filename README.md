@@ -56,6 +56,13 @@ ROS API (stable)
 * `vehicle/brake_info_report [dbw_mkz_msgs/BrakeInfoReport]`: publishes braking-related data including information on wheel torques, vehicle acceleration, brake pedal quality factor, hill start assist system, anti-lock braking system (ABS), stability control system, traction control system (TCS), and parking brake (50 Hz).
 * `vehicle/brake_report [dbw_mkz_msgs/BrakeReport]`: publishes braking data including information on brake pedal position, braking torque, braking deceleration, and braking status (50 Hz).
 * `vehicle/dbw_enable [std_msgs/Bool]`: publishes whether the Drive-by-Wire system has been enabled.
+* `vehicle/driver_assist_report [dbw_mkz_msgs/DriverAssistReport]`: publishes information pertaining to advanced driver assistant systems (ADAS), including whether any such systems ([forward collision warning (FCW)](https://www.kbb.com/car-advice/how-does-forward-collision-warning-work/), [automatic emergency braking (AEB)](https://www.jdpower.com/cars/shopping-guides/what-is-automatic-emergency-braking), and [adaptive cruise control (ACC)](https://en.wikipedia.org/wiki/Adaptive_cruise_control)) are enabled or active as well as vehicle deceleration.
+* `vehicle/fuel_level_report [dbw_mkz_msgs/FuelLevelReport]`: publishes fuel level and battery voltage information of the vehicle (10 Hz).
+* `vehicle/gear_report [dbw_mkz_msgs/GearReport]`: publishes gear data including gear status and current gear enumeration (20 Hz).
+* `vehicle/gps/fix [sensor_msgs/NavSatFix]`: publishes the Navigation Satellite fix for any [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems), specified using the WGS84 reference ellipsoid (1 Hz).
+* `vehicle/gps/time [sensor_msgs/TimeReference]`: publishes time reported by the [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems) in use (1 Hz).
+* `vehicle/gps/vel [geometry_msgs/TwistStamped]`: publishes linear and angular velocity (twist) measured by the [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems) in use (1 Hz).
+* `vehicle/imu/data_raw [sensor_msgs/Imu]`: publishes data from the vehicle's IMU.
 * `vehicle/discovery`: publishes the CARMA [DriverStatus](https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/cav_msgs/msg/DriverStatus.msg) message.
 
 #### Subscribed Topics
