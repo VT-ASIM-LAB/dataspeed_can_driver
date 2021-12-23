@@ -36,7 +36,7 @@ RUN set -xe \
 && rosdep update --rosdistro=${ROS_DISTRO} \
 && rosdep install -y --from-paths ${DS_SDK_PATH}
 
-RUN apt-get install -y ros-${ROS_DISTRO}-dataspeed-can-msg-filters
+RUN apt-get install -y ros-${ROS_DISTRO}-dataspeed-can-msg-filters ros-${ROS_DISTRO}-dataspeed-can-usb
 
 RUN sudo git clone --depth 1 https://github.com/vishnubob/wait-for-it.git ~/.base-image/wait-for-it && \
     sudo mv ~/.base-image/wait-for-it/wait-for-it.sh /usr/bin
