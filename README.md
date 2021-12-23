@@ -44,19 +44,30 @@ ROS API (stable)
 ### dbw_mkz_can
 
 #### Nodes
+* `can_node`
 * `vehicle/dbw_node`
 
-#### Topics
-* ``: .
-* ``: .
+#### Published Topics
+* `can_node/can_err [can_msgs/Frame]`: publishes error messages read from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
+* `can_node/can_rx [can_msgs/Frame]`: publishes CAN messages read from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) (772 Hz).
+* `can_node/version [std_msgs/String]`: publishes the Dataspeed CAN USB Driver version.
+* `vehicle/antilock_brakes_active [std_msgs/Bool]`: publishes whether the vehicle's anti-lock brake system (ABS) is active (50 Hz).
+* `vehicle/brake_feedback [automotive_platform_msgs/BrakeFeedback]`: publishes the current brake pedal position (50 Hz).
+* `vehicle/brake_info_report [dbw_mkz_msgs/BrakeInfoReport]`: publishes braking-related data including information on wheel torques, vehicle acceleration, brake pedal quality factor, hill start assist system, anti-lock braking system (ABS), stability control system, traction control system (TCS), and parking brake (50 Hz).
+* `vehicle/brake_report [dbw_mkz_msgs/BrakeReport]`: publishes braking data including information on brake pedal position, braking torque, braking deceleration, and braking status (50 Hz).
+* `vehicle/dbw_enable [std_msgs/Bool]`: publishes whether the Drive-by-Wire system has been enabled.
 * `vehicle/discovery`: publishes the CARMA [DriverStatus](https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/cav_msgs/msg/DriverStatus.msg) message.
+
+#### Subscribed Topics
+* `vehicle/can_tx [can_msgs/Frame]`: `can_node` subscribes to this topic to receive commands that should be published to the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
 
 #### Services
 * ``
 
 #### Parameters
-* ``: .
-* `parameter`: .
+* `can_node/bitrate`: bit rate of the [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
+* `can_node/mask_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter mask.
+* `can_node/match_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter match.
 
 Examples
 --------
