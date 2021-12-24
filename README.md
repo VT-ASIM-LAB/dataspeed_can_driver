@@ -84,7 +84,7 @@ ROS API (stable)
 * `vehicle/vin [std_msgs/String]`: publishes the [vehicle identification number (VIN)](https://en.wikipedia.org/wiki/Vehicle_identification_number).
 * `vehicle/wheel_position_report [dbw_mkz_msgs/WheelPositionReport]`: publishes individual wheel positions (50 Hz).
 * `vehicle/wheel_speed_report [dbw_mkz_msgs/WheelSpeedReport]`: publishes individual wheel speeds (100 Hz).
-* `vehicle/discovery`: publishes the CARMA [DriverStatus](https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/cav_msgs/msg/DriverStatus.msg) message.
+* `vehicle/discovery`: publishes the CARMA [DriverStatus](https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/cav_msgs/msg/DriverStatus.msg) message (1.25 Hz).
 
 #### Subscribed Topics
 * `vehicle/can_tx [can_msgs/Frame]`: `can_node` subscribes to this topic to receive commands that should be published to the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
