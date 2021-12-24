@@ -62,7 +62,22 @@ ROS API (stable)
 * `vehicle/gps/fix [sensor_msgs/NavSatFix]`: publishes the Navigation Satellite fix for any [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems), specified using the [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System#1984_version) reference ellipsoid (1 Hz).
 * `vehicle/gps/time [sensor_msgs/TimeReference]`: publishes time reported by the [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems) in use (1 Hz).
 * `vehicle/gps/vel [geometry_msgs/TwistStamped]`: publishes linear and angular velocity (twist) measured by the [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems) in use (1 Hz).
-* `vehicle/imu/data_raw [sensor_msgs/Imu]`: publishes data from the vehicle's IMU.
+* `vehicle/imu/data_raw [sensor_msgs/Imu]`: publishes data from the vehicle's IMU (100 Hz).
+* `vehicle/misc_1_report [dbw_mkz_msgs/Misc1Report]`: publishes miscellaneous data obtained from the [CAN bus](https://en.wikipedia.org/wiki/CAN_bus), including information on turn signals, high beam, windshield wipers, ambient light sensor, outside air temperature, steering wheel buttons, doors, passenger seat, and seat belt (20 Hz).
+* `vehicle/parking_brake [std_msgs/Bool]`: publishes whether the vehicle's parking brake is active (50 Hz).
+* `vehicle/sonar_cloud [sensor_msgs/PointCloud2]`: publishes a point cloud created from the vehicle's ultrasound sensors observation.
+* `vehicle/steering_feedback [automotive_platform_msgs/SteeringFeedback]`: publishes the current steering wheel angle (100 Hz).
+* `vehicle/steering_report [dbw_mkz_msgs/SteeringReport]`: publishes steering data including information on the steering wheel angle, steering torque, and vehicle speed (100 Hz).
+* `vehicle/stability_ctrl_active [std_msgs/Bool]`: publishes whether the vehicle's stability control system is active (50 Hz).
+* `vehicle/stability_ctrl_enabled [std_msgs/Bool]`: publishes whether the vehicle's stability control system is enabled (50 Hz).
+* `vehicle/surround_report [dbw_mkz_msgs/SurroundReport]`: publishes data obtained from the vehicle's ultrasound sensors as well as cross traffic alert (CTA) and blind spot information system (BLIS) information.
+* `vehicle/throttle_feedback [automotive_platform_msgs/ThrottleFeedback]`: publishes the current throttle pedal position (100 Hz).
+* `vehicle/throttle_info_report [dbw_mkz_msgs/ThrottleInfoReport]`: publishes throttle-related data including information on the throttle pedal position and rate of change, engine rpm, gear number, ignition status, and battery current (100 Hz).
+* `vehicle/throttle_report [dbw_mkz_msgs/ThrottleReport]`: publishes throttle pedal data (50 Hz).
+* `vehicle/tire_pressure_report [dbw_mkz_msgs/TirePressureReport]`: publishes tire pressure data (2 Hz).
+* `vehicle/traction_ctrl_active [std_msgs/Bool]`: publishes whether the vehicle's traction control system (TCS) is active (50 Hz).
+* `vehicle/traction_ctrl_enabled [std_msgs/Bool]`: publishes whether the vehicle's traction control system (TCS) is enabled (50 Hz).
+* `vehicle/transmission_state [j2735_msgs/
 * `vehicle/discovery`: publishes the CARMA [DriverStatus](https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/cav_msgs/msg/DriverStatus.msg) message.
 
 #### Subscribed Topics
