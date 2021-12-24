@@ -35,6 +35,7 @@ Finally, add the following lines to the `drivers.launch` file in the same direct
 ```
 <include if="$(arg dataspeed_can)" file="$(find dbw_mkz_can)/launch/dbw.launch">
   <arg name="frame_id" value="base_link"/>
+  <arg name="load_urdf" value="false"/>
 </include>
 ```
 
