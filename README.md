@@ -88,6 +88,14 @@ ROS API (stable)
 
 #### Subscribed Topics
 * `vehicle/can_tx [can_msgs/Frame]`: `can_node` subscribes to this topic to receive commands that should be published to the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
+* `can_node/can_rx [can_msgs/Frame]`: `vehicle/dbw_node` subscribes to this topic.
+* `enable`: `vehicle/dbw_node` subscribes to this topic to receive the command for enabling the Drive-by-Wire system.
+* `disable`: `vehicle/dbw_node` subscribes to this topic to receive the command for disabling the Drive-by-Wire system.
+* `brake_cmd [dbw_mkz_msgs/BrakeCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the braking command intended for the Drive-by-Wire system.
+* `gear_cmd [dbw_mkz_msgs/GearCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the gear change command intended for the Drive-by-Wire system.
+* `steering_cmd [dbw_mkz_msgs/SteeringCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the steering command intended for the Drive-by-Wire system.
+* `throttle_cmd [dbw_mkz_msgs/ThrottleCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the throttle command intended for the Drive-by-Wire system.
+* `turn_signal_cmd [dbw_mkz_msgs/TurnSignalCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the turn signal command intended for the Drive-by-Wire system.
 
 #### Services
 N/A
