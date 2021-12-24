@@ -418,6 +418,14 @@ void DbwNode::recvCAN(const can_msgs::Frame::ConstPtr& msg)
           signed_twist_speed = out.speed;
           signed_twist_yaw_rate = out.speed * tan(out.steering_wheel_angle / steering_ratio_) / acker_wheelbase_;
           pub_twist_.publish(twist);
+          if (reversed) {
+            signed_twist.twist.linear.x = -signed_twist_speed;
+            signed_twist.twist.angular.z = -signed_twist_yaw_rate;
+          } else {
+            signed_twist.twist.linear.x = signed_twist_speed;
+            signed_twist.twist.angular.z = signed_twist_yaw_rate;
+          }
+          pub_signed_twist_.publish(signed_twist);
           if (enable_joint_states_) {
             publishJointStates(msg->header.stamp, NULL, &out);
           }
@@ -986,14 +994,6 @@ void DbwNode::recvCAN(const can_msgs::Frame::ConstPtr& msg)
         ROS_WARN_COND(warn_cmds_, "DBW system: Another node on the CAN bus is commanding the vehicle!!! Subsystem: Turn Signals. Id: 0x%03X", ID_MISC_CMD);
         break;
     }
-    if (reversed) {
-      signed_twist.twist.linear.x = -signed_twist_speed;
-      signed_twist.twist.angular.z = -signed_twist_yaw_rate;
-    } else {
-      signed_twist.twist.linear.x = signed_twist_speed;
-      signed_twist.twist.angular.z = signed_twist_yaw_rate;
-    }
-    pub_signed_twist_.publish(signed_twist);
     if (last_discovery_pub == ros::Time(0) || (ros::Time::now() - last_discovery_pub).toSec() > 0.8) {
         pub_discovery_.publish(msg_discovery);
         last_discovery_pub = ros::Time::now();
