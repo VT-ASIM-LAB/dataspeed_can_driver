@@ -51,6 +51,7 @@ ROS API (stable)
 * `can_node/can_err [can_msgs/Frame]`: publishes error messages read from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
 * `can_node/can_rx [can_msgs/Frame]`: publishes CAN messages read from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) (772 Hz).
 * `can_node/version [std_msgs/String]`: publishes the Dataspeed CAN USB Driver version.
+* `vehicle/can_tx [can_msgs/Frame]`: publishes commands intended for the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
 * `vehicle/antilock_brakes_active [std_msgs/Bool]`: publishes whether the vehicle's anti-lock brake system (ABS) is active (50 Hz).
 * `vehicle/brake_feedback [automotive_platform_msgs/BrakeFeedback]`: publishes the current brake pedal position (50 Hz).
 * `vehicle/brake_info_report [dbw_mkz_msgs/BrakeInfoReport]`: publishes braking-related data including information on wheel torques, vehicle acceleration, brake pedal quality factor, hill start assist system, anti-lock braking system (ABS), stability control system, traction control system (TCS), and parking brake (50 Hz).
@@ -77,14 +78,19 @@ ROS API (stable)
 * `vehicle/tire_pressure_report [dbw_mkz_msgs/TirePressureReport]`: publishes tire pressure data (2 Hz).
 * `vehicle/traction_ctrl_active [std_msgs/Bool]`: publishes whether the vehicle's traction control system (TCS) is active (50 Hz).
 * `vehicle/traction_ctrl_enabled [std_msgs/Bool]`: publishes whether the vehicle's traction control system (TCS) is enabled (50 Hz).
-* `vehicle/transmission_state [j2735_msgs/
+* `vehicle/transmission_state [j2735_msgs/TransmissionState]`: publishes the current state of the vehicle's transmission (20 Hz).
+* `vehicle/twist [geometry_msgs/TwistStamped]`: publishes the absolute value of the vehicle's current twist (velocity in free space broken down into its linear and angular parts) (100 Hz).
+* `vehicle/signed_twist [geometry_msgs/TwistStamped]`: publishes the vehicle's current twist (velocity in free space broken down into its linear and angular parts) with correct signs (i.e. negative linear velocity when driving in reverse) (100 Hz).
+* `vehicle/vin [std_msgs/String]`: publishes the [vehicle identification number (VIN)](https://en.wikipedia.org/wiki/Vehicle_identification_number).
+* `vehicle/wheel_position_report [dbw_mkz_msgs/WheelPositionReport]`: publishes individual wheel positions (50 Hz).
+* `vehicle/wheel_speed_report [dbw_mkz_msgs/WheelSpeedReport]`: publishes individual wheel speeds (100 Hz).
 * `vehicle/discovery`: publishes the CARMA [DriverStatus](https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/cav_msgs/msg/DriverStatus.msg) message.
 
 #### Subscribed Topics
 * `vehicle/can_tx [can_msgs/Frame]`: `can_node` subscribes to this topic to receive commands that should be published to the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
 
 #### Services
-* ``
+N/A
 
 #### Parameters
 * `can_node/bitrate`: bit rate of the [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
