@@ -89,13 +89,13 @@ ROS API (stable)
 #### Subscribed Topics
 * `vehicle/can_tx [can_msgs/Frame]`: `can_node` subscribes to this topic to receive commands that should be published to the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
 * `can_node/can_rx [can_msgs/Frame]`: `vehicle/dbw_node` subscribes to this topic.
-* `enable`: `vehicle/dbw_node` subscribes to this topic to receive the command for enabling the Drive-by-Wire system.
-* `disable`: `vehicle/dbw_node` subscribes to this topic to receive the command for disabling the Drive-by-Wire system.
-* `brake_cmd [dbw_mkz_msgs/BrakeCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the braking command intended for the Drive-by-Wire system.
-* `gear_cmd [dbw_mkz_msgs/GearCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the gear change command intended for the Drive-by-Wire system.
-* `steering_cmd [dbw_mkz_msgs/SteeringCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the steering command intended for the Drive-by-Wire system.
-* `throttle_cmd [dbw_mkz_msgs/ThrottleCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the throttle command intended for the Drive-by-Wire system.
-* `turn_signal_cmd [dbw_mkz_msgs/TurnSignalCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the turn signal command intended for the Drive-by-Wire system.
+* `vehicle/enable`: `vehicle/dbw_node` subscribes to this topic to receive the command for enabling the Drive-by-Wire system.
+* `vehicle/disable`: `vehicle/dbw_node` subscribes to this topic to receive the command for disabling the Drive-by-Wire system.
+* `vehicle/brake_cmd [dbw_mkz_msgs/BrakeCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the braking command intended for the Drive-by-Wire system.
+* `vehicle/gear_cmd [dbw_mkz_msgs/GearCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the gear change command intended for the Drive-by-Wire system.
+* `vehicle/steering_cmd [dbw_mkz_msgs/SteeringCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the steering command intended for the Drive-by-Wire system.
+* `vehicle/throttle_cmd [dbw_mkz_msgs/ThrottleCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the throttle command intended for the Drive-by-Wire system.
+* `vehicle/turn_signal_cmd [dbw_mkz_msgs/TurnSignalCmd]`: `vehicle/dbw_node` subscribes to this topic to receive the turn signal command intended for the Drive-by-Wire system.
 
 #### Services
 N/A
@@ -104,6 +104,14 @@ N/A
 * `can_node/bitrate`: bit rate of the [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
 * `can_node/mask_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter mask.
 * `can_node/match_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter match.
+* `vehicle/dbw_node/ackermann_track`: distance between the left and right tires in [Ackermann steering geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry).
+* `vehicle/dbw_node/ackermann_wheelbase`: distance between the front and rear tires in [Ackermann steering geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry).
+* `vehicle/dbw_node/buttons`
+* `vehicle/dbw_node/frame_id`: the [TF2](http://www.ros.org/wiki/tf2) frame ID.
+* `vehicle/dbw_node/joint_states`
+* `vehicle/dbw_node/pedal_luts`
+* `vehicle/dbw_node/steering_ratio`: steering ratio in [Ackermann steering geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry).
+* `vehicle/dbw_node/warn_cmds`
 
 Examples
 --------
