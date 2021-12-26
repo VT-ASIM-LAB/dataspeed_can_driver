@@ -126,7 +126,7 @@ Original Dataspeed ADAS Development Vehicle Kit Documentation
 
 Documentation and firmware updates
 ----------------------------------
-The latest release can be found on the [downloads](https://bitbucket.org/DataspeedInc/dbw_mkz_ros/downloads) page
+The latest release can be found on the [downloads](https://bitbucket.org/DataspeedInc/dbw_mkz_ros/downloads) page.
 
 ROS
 ---
