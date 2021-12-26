@@ -104,16 +104,16 @@ N/A
 
 #### Parameters
 * `can_node/bitrate`: bit rate of the [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
-* `can_node/mask_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter mask.
-* `can_node/match_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter match.
+* `can_node/mask_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter mask of a mask/match filter pair.
+* `can_node/match_0`: [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) filter match of a mask/match filter pair.
 * `vehicle/dbw_node/ackermann_track`: distance between the left and right tires in [Ackermann steering geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry).
 * `vehicle/dbw_node/ackermann_wheelbase`: distance between the front and rear tires in [Ackermann steering geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry).
-* `vehicle/dbw_node/buttons`
-* `vehicle/dbw_node/frame_id`: the [TF2](http://www.ros.org/wiki/tf2) frame ID.
-* `vehicle/dbw_node/joint_states`
-* `vehicle/dbw_node/pedal_luts`
+* `vehicle/dbw_node/buttons`: enable/disable buttons.
+* `vehicle/dbw_node/frame_id`: [TF2](http://www.ros.org/wiki/tf2) frame ID of CAN messages.
+* `vehicle/dbw_node/joint_states`: enable/disable publishing joint states.
+* `vehicle/dbw_node/pedal_luts`: pedal look-up tables.
 * `vehicle/dbw_node/steering_ratio`: steering ratio in [Ackermann steering geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry).
-* `vehicle/dbw_node/warn_cmds`
+* `vehicle/dbw_node/warn_cmds`: warn on received commands.
 
 Examples
 --------
