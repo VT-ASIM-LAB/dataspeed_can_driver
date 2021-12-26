@@ -67,13 +67,13 @@ Publication frequencies are provided for a Dataspeed Drive-by-Wire Kit installed
 * `vehicle/gps/vel [geometry_msgs/TwistStamped]`: publishes linear and angular velocity (twist) measured by the [Global Navigation Satellite System (GNSS)](https://en.wikipedia.org/wiki/Satellite_navigation#Global_navigation_satellite_systems) in use (1 Hz).
 * `vehicle/imu/data_raw [sensor_msgs/Imu]`: publishes data from the vehicle's IMU (100 Hz).
 * `vehicle/misc_1_report [dbw_mkz_msgs/Misc1Report]`: publishes miscellaneous information obtained from the [CAN bus](https://en.wikipedia.org/wiki/CAN_bus), including the status of turn signals, high beam, windshield wipers, steering wheel buttons, doors, passenger seat, and seat belt, as well as ambient light sensor and outside air temperature measurements (20 Hz).
-* `vehicle/parking_brake [std_msgs/Bool]`: publishes whether the vehicle's parking brake is active (50 Hz).
-* `vehicle/sonar_cloud [sensor_msgs/PointCloud2]`: publishes a point cloud created from the vehicle's ultrasound sensors observation.
+* `vehicle/parking_brake [std_msgs/Bool]`: publishes True if the vehicle's parking brake is active, False otherwise (50 Hz).
+* `vehicle/sonar_cloud [sensor_msgs/PointCloud2]`: publishes a point cloud created from the observations of the vehicle's ultrasound sensors.
 * `vehicle/steering_feedback [automotive_platform_msgs/SteeringFeedback]`: publishes the current steering wheel angle (100 Hz).
-* `vehicle/steering_report [dbw_mkz_msgs/SteeringReport]`: publishes steering data including information on the steering wheel angle, steering torque, and vehicle speed (100 Hz).
-* `vehicle/stability_ctrl_active [std_msgs/Bool]`: publishes whether the vehicle's stability control system is active (50 Hz).
-* `vehicle/stability_ctrl_enabled [std_msgs/Bool]`: publishes whether the vehicle's stability control system is enabled (50 Hz).
-* `vehicle/surround_report [dbw_mkz_msgs/SurroundReport]`: publishes data obtained from the vehicle's ultrasound sensors as well as cross traffic alert (CTA) and blind spot information system (BLIS) information.
+* `vehicle/steering_report [dbw_mkz_msgs/SteeringReport]`: publishes steering information including steering wheel angle, steering torque, and vehicle speed (100 Hz).
+* `vehicle/stability_ctrl_active [std_msgs/Bool]`: publishes True if the vehicle's [electronic stability control system (ESC)](https://en.wikipedia.org/wiki/Electronic_stability_control) is active, False otherwise (50 Hz).
+* `vehicle/stability_ctrl_enabled [std_msgs/Bool]`: publishes True if the vehicle's [electronic stability control system (ESC)](https://en.wikipedia.org/wiki/Electronic_stability_control) is enabled, false otherwise (50 Hz).
+* `vehicle/surround_report [dbw_mkz_msgs/SurroundReport]`: publishes data obtained from the vehicle's ultrasound sensors as well as [cross traffic alert (CTA)](https://www.autotrader.com/car-tech/what-is-cross-traffic-alert-and-how-does-it-work) and [blind spot information system (BLIS)](https://www.jdpower.com/cars/shopping-guides/what-is-a-blind-spot-monitor) data.
 * `vehicle/throttle_feedback [automotive_platform_msgs/ThrottleFeedback]`: publishes the current throttle pedal position (100 Hz).
 * `vehicle/throttle_info_report [dbw_mkz_msgs/ThrottleInfoReport]`: publishes throttle-related data including information on the throttle pedal position and rate of change, engine rpm, gear number, ignition status, and battery current (100 Hz).
 * `vehicle/throttle_report [dbw_mkz_msgs/ThrottleReport]`: publishes throttle pedal data (50 Hz).
