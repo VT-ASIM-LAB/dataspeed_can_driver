@@ -1,7 +1,7 @@
 Dataspeed Drive-by-Wire Kit CAN Driver for CARMA
 ================================================
 
-This is a fork of the [dbw_mkz_ros](https://bitbucket.org/DataspeedInc/dbw_mkz_ros/src/master/) package that is used for connecting to and configuring the [Dataspeed Drive-by-Wire Kit](https://www.dataspeedinc.com/adas-by-wire-system/) for Lincoln MKZ / Ford Fusion vehicles. This fork has been modified to allow for building a Docker image that can serve as a CAN driver for the [CARMA Platform](https://github.com/usdot-fhwa-stol/carma-platform).
+This is a fork of the [dbw_mkz_ros](https://bitbucket.org/DataspeedInc/dbw_mkz_ros/src/master/) package that is used for connecting to and configuring the [Dataspeed Drive-by-Wire Kit](https://www.dataspeedinc.com/adas-by-wire-system/) for Lincoln MKZ / Ford Fusion vehicles. It may also work for other vehicles compatible with the [Dataspeed Drive-by-Wire Kit](https://www.dataspeedinc.com/adas-by-wire-system/), though this is not guaranteed. This fork has been modified to allow for building a Docker image that can serve as a CAN driver for the [CARMA Platform](https://github.com/usdot-fhwa-stol/carma-platform).
 
 Ubuntu 20.04 Installation
 -------------------------
@@ -39,8 +39,8 @@ Finally, add the following lines to the `drivers.launch` file in the same direct
 </include>
 ```
 
-ROS API (stable)
-----------------
+ROS API
+-------
 
 ### dbw_mkz_can
 
@@ -49,13 +49,13 @@ ROS API (stable)
 * `vehicle/dbw_node`
 
 #### Published Topics
-* `can_node/can_err [can_msgs/Frame]`: publishes error messages read from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
-* `can_node/can_rx [can_msgs/Frame]`: publishes CAN messages read from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) (772 Hz).
+* `can_node/can_err [can_msgs/Frame]`: publishes error messages received from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
+* `can_node/can_rx [can_msgs/Frame]`: publishes CAN messages received from the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) (772 Hz).
 * `can_node/version [std_msgs/String]`: publishes the Dataspeed CAN USB Driver version.
 * `vehicle/can_tx [can_msgs/Frame]`: publishes commands intended for the vehicle [CAN bus](https://en.wikipedia.org/wiki/CAN_bus).
-* `vehicle/antilock_brakes_active [std_msgs/Bool]`: publishes whether the vehicle's anti-lock brake system (ABS) is active (50 Hz).
+* `vehicle/antilock_brakes_active [std_msgs/Bool]`: publishes True if the vehicle's [anti-lock braking system (ABS)](https://en.wikipedia.org/wiki/Anti-lock_braking_system) is active (50 Hz), False otherwise.
 * `vehicle/brake_feedback [automotive_platform_msgs/BrakeFeedback]`: publishes the current brake pedal position (50 Hz).
-* `vehicle/brake_info_report [dbw_mkz_msgs/BrakeInfoReport]`: publishes braking-related data including information on wheel torques, vehicle acceleration, brake pedal quality factor, hill start assist system, anti-lock braking system (ABS), stability control system, traction control system (TCS), and parking brake (50 Hz).
+* `vehicle/brake_info_report [dbw_mkz_msgs/BrakeInfoReport]`: publishes braking-related information including wheel torques, vehicle acceleration, brake pedal quality factor, and status of the [hill start assist system](https://mycardoeswhat.org/safety-features/hill-start-assist/), [anti-lock braking system (ABS)](https://en.wikipedia.org/wiki/Anti-lock_braking_system), [stability control system](https://en.wikipedia.org/wiki/Electronic_stability_control), [traction control system (TCS)](https://en.wikipedia.org/wiki/Traction_control_system), and parking brake (50 Hz).
 * `vehicle/brake_report [dbw_mkz_msgs/BrakeReport]`: publishes braking data including information on brake pedal position, braking torque, braking deceleration, and braking status (50 Hz).
 * `vehicle/dbw_enabled [std_msgs/Bool]`: publishes whether the Drive-by-Wire system has been enabled.
 * `vehicle/driver_assist_report [dbw_mkz_msgs/DriverAssistReport]`: publishes information pertaining to advanced driver assistant systems (ADAS), including whether any such systems ([forward collision warning (FCW)](https://www.kbb.com/car-advice/how-does-forward-collision-warning-work/), [automatic emergency braking (AEB)](https://www.jdpower.com/cars/shopping-guides/what-is-automatic-emergency-braking), and [adaptive cruise control (ACC)](https://en.wikipedia.org/wiki/Adaptive_cruise_control)) are enabled or active as well as vehicle deceleration.
