@@ -75,11 +75,11 @@ Publication frequencies are provided for a Dataspeed Drive-by-Wire Kit installed
 * `vehicle/stability_ctrl_enabled [std_msgs/Bool]`: publishes True if the vehicle's [electronic stability control system (ESC)](https://en.wikipedia.org/wiki/Electronic_stability_control) is enabled, false otherwise (50 Hz).
 * `vehicle/surround_report [dbw_mkz_msgs/SurroundReport]`: publishes data obtained from the vehicle's ultrasound sensors as well as [cross traffic alert (CTA)](https://www.autotrader.com/car-tech/what-is-cross-traffic-alert-and-how-does-it-work) and [blind spot information system (BLIS)](https://www.jdpower.com/cars/shopping-guides/what-is-a-blind-spot-monitor) data.
 * `vehicle/throttle_feedback [automotive_platform_msgs/ThrottleFeedback]`: publishes the current throttle pedal position (100 Hz).
-* `vehicle/throttle_info_report [dbw_mkz_msgs/ThrottleInfoReport]`: publishes throttle-related data including information on the throttle pedal position and rate of change, engine rpm, gear number, ignition status, and battery current (100 Hz).
+* `vehicle/throttle_info_report [dbw_mkz_msgs/ThrottleInfoReport]`: publishes throttle-related information including throttle pedal position and rate of change, engine rpm, gear number, ignition status, and battery current (100 Hz).
 * `vehicle/throttle_report [dbw_mkz_msgs/ThrottleReport]`: publishes throttle pedal data (50 Hz).
 * `vehicle/tire_pressure_report [dbw_mkz_msgs/TirePressureReport]`: publishes tire pressure data (2 Hz).
-* `vehicle/traction_ctrl_active [std_msgs/Bool]`: publishes whether the vehicle's traction control system (TCS) is active (50 Hz).
-* `vehicle/traction_ctrl_enabled [std_msgs/Bool]`: publishes whether the vehicle's traction control system (TCS) is enabled (50 Hz).
+* `vehicle/traction_ctrl_active [std_msgs/Bool]`: publishes True if the vehicle's [traction control system (TCS)](https://en.wikipedia.org/wiki/Traction_control_system) is active, False otherwise (50 Hz).
+* `vehicle/traction_ctrl_enabled [std_msgs/Bool]`: publishes True if the vehicle's [traction control system (TCS)](https://en.wikipedia.org/wiki/Traction_control_system) is enabled, False otherwise (50 Hz).
 * `vehicle/transmission_state [j2735_msgs/TransmissionState]`: publishes the current state of the vehicle's transmission (20 Hz).
 * `vehicle/twist [geometry_msgs/TwistStamped]`: publishes the absolute value of the vehicle's current twist (velocity in free space broken down into its linear and angular parts) (100 Hz).
 * `vehicle/signed_twist [geometry_msgs/TwistStamped]`: publishes the vehicle's current twist (velocity in free space broken down into its linear and angular parts) with correct signs (i.e. negative linear velocity when driving in reverse) (100 Hz).
