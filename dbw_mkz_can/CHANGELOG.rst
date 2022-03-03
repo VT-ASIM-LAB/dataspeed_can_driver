@@ -2,6 +2,13 @@
 Changelog for package dbw_mkz_can
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.5.0 (2022-02-23)
+------------------
+* Add Ford Mustang Mach-E
+* Add electric parking brake control
+* Rename TurnSignalCmd to MiscCmd
+* Contributors: Kevin Hallenbeck
+
 1.4.1 (2021-09-20)
 ------------------
 * Bump firmware versions
