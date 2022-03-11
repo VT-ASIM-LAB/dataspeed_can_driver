@@ -2,6 +2,9 @@
 Changelog for package dbw_mkz_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.5.1 (2022-03-08)
+------------------
+
 1.5.0 (2022-02-23)
 ------------------
 * Add electric parking brake control
