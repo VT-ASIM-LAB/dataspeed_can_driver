@@ -61,35 +61,35 @@ namespace dbw_mkz_can
 
 // Latest firmware versions
 PlatformMap FIRMWARE_LATEST({
-  {PlatformVersion(P_FORD_C1,  M_TPEC,  ModuleVersion(1,2,1))},
-  {PlatformVersion(P_FORD_C1,  M_STEER, ModuleVersion(1,2,1))},
-  {PlatformVersion(P_FORD_C1,  M_SHIFT, ModuleVersion(1,2,1))},
-  {PlatformVersion(P_FORD_C1,  M_ABS,   ModuleVersion(1,2,1))},
-  {PlatformVersion(P_FORD_C1,  M_BOO,   ModuleVersion(1,2,1))},
-  {PlatformVersion(P_FORD_C1,  M_EPS,   ModuleVersion(1,2,1))},
-  {PlatformVersion(P_FORD_CD4, M_BPEC,  ModuleVersion(2,5,1))},
-  {PlatformVersion(P_FORD_CD4, M_TPEC,  ModuleVersion(2,5,1))},
-  {PlatformVersion(P_FORD_CD4, M_STEER, ModuleVersion(2,5,1))},
-  {PlatformVersion(P_FORD_CD4, M_SHIFT, ModuleVersion(2,5,1))},
-  {PlatformVersion(P_FORD_CD5, M_BOO,   ModuleVersion(1,1,1))},
-  {PlatformVersion(P_FORD_CD5, M_TPEC,  ModuleVersion(1,1,1))},
-  {PlatformVersion(P_FORD_CD5, M_STEER, ModuleVersion(1,1,1))},
-  {PlatformVersion(P_FORD_GE1, M_TPEC,  ModuleVersion(0,0,1))},
-  {PlatformVersion(P_FORD_GE1, M_STEER, ModuleVersion(0,0,1))},
-  {PlatformVersion(P_FORD_GE1, M_SHIFT, ModuleVersion(0,0,1))},
-  {PlatformVersion(P_FORD_P5,  M_TPEC,  ModuleVersion(1,4,1))},
-  {PlatformVersion(P_FORD_P5,  M_STEER, ModuleVersion(1,4,1))},
-  {PlatformVersion(P_FORD_P5,  M_SHIFT, ModuleVersion(1,4,1))},
-  {PlatformVersion(P_FORD_P5,  M_ABS,   ModuleVersion(1,4,1))},
-  {PlatformVersion(P_FORD_P5,  M_BOO,   ModuleVersion(1,4,1))},
-  {PlatformVersion(P_FORD_T6,  M_TPEC,  ModuleVersion(0,2,1))},
-  {PlatformVersion(P_FORD_T6,  M_STEER, ModuleVersion(0,2,1))},
-  {PlatformVersion(P_FORD_T6,  M_SHIFT, ModuleVersion(0,2,1))},
-  {PlatformVersion(P_FORD_U6,  M_TPEC,  ModuleVersion(1,0,1))},
-  {PlatformVersion(P_FORD_U6,  M_STEER, ModuleVersion(1,0,1))},
-  {PlatformVersion(P_FORD_U6,  M_SHIFT, ModuleVersion(1,0,1))},
-  {PlatformVersion(P_FORD_U6,  M_ABS,   ModuleVersion(1,0,1))},
-  {PlatformVersion(P_FORD_U6,  M_BOO,   ModuleVersion(1,0,1))},
+  {PlatformVersion(P_FORD_C1,  M_TPEC,  ModuleVersion(1,2,2))},
+  {PlatformVersion(P_FORD_C1,  M_STEER, ModuleVersion(1,2,2))},
+  {PlatformVersion(P_FORD_C1,  M_SHIFT, ModuleVersion(1,2,2))},
+  {PlatformVersion(P_FORD_C1,  M_ABS,   ModuleVersion(1,2,2))},
+  {PlatformVersion(P_FORD_C1,  M_BOO,   ModuleVersion(1,2,2))},
+  {PlatformVersion(P_FORD_C1,  M_EPS,   ModuleVersion(1,2,2))},
+  {PlatformVersion(P_FORD_CD4, M_BPEC,  ModuleVersion(2,5,2))},
+  {PlatformVersion(P_FORD_CD4, M_TPEC,  ModuleVersion(2,5,2))},
+  {PlatformVersion(P_FORD_CD4, M_STEER, ModuleVersion(2,5,2))},
+  {PlatformVersion(P_FORD_CD4, M_SHIFT, ModuleVersion(2,5,2))},
+  {PlatformVersion(P_FORD_CD5, M_BOO,   ModuleVersion(1,1,2))},
+  {PlatformVersion(P_FORD_CD5, M_TPEC,  ModuleVersion(1,1,2))},
+  {PlatformVersion(P_FORD_CD5, M_STEER, ModuleVersion(1,1,2))},
+  {PlatformVersion(P_FORD_GE1, M_TPEC,  ModuleVersion(0,1,0))},
+  {PlatformVersion(P_FORD_GE1, M_STEER, ModuleVersion(0,1,0))},
+  {PlatformVersion(P_FORD_GE1, M_SHIFT, ModuleVersion(0,1,0))},
+  {PlatformVersion(P_FORD_P5,  M_TPEC,  ModuleVersion(1,4,2))},
+  {PlatformVersion(P_FORD_P5,  M_STEER, ModuleVersion(1,4,2))},
+  {PlatformVersion(P_FORD_P5,  M_SHIFT, ModuleVersion(1,4,2))},
+  {PlatformVersion(P_FORD_P5,  M_ABS,   ModuleVersion(1,4,2))},
+  {PlatformVersion(P_FORD_P5,  M_BOO,   ModuleVersion(1,4,2))},
+  {PlatformVersion(P_FORD_T6,  M_TPEC,  ModuleVersion(0,2,2))},
+  {PlatformVersion(P_FORD_T6,  M_STEER, ModuleVersion(0,2,2))},
+  {PlatformVersion(P_FORD_T6,  M_SHIFT, ModuleVersion(0,2,2))},
+  {PlatformVersion(P_FORD_U6,  M_TPEC,  ModuleVersion(1,0,2))},
+  {PlatformVersion(P_FORD_U6,  M_STEER, ModuleVersion(1,0,2))},
+  {PlatformVersion(P_FORD_U6,  M_SHIFT, ModuleVersion(1,0,2))},
+  {PlatformVersion(P_FORD_U6,  M_ABS,   ModuleVersion(1,0,2))},
+  {PlatformVersion(P_FORD_U6,  M_BOO,   ModuleVersion(1,0,2))},
 });
 
 // Minimum firmware versions required for the timeout bit
@@ -1364,15 +1364,14 @@ void DbwNode::recvMiscCmd(const dbw_mkz_msgs::MiscCmd::ConstPtr& msg)
   pub_can_.publish(out);
 }
 
-bool DbwNode::publishDbwEnabled()
+bool DbwNode::publishDbwEnabled(bool force)
 {
-  bool change = false;
   bool en = enabled();
-  if (prev_enable_ != en) {
+  bool change = prev_enable_ != en;
+  if (change || force) {
     std_msgs::Bool msg;
     msg.data = en;
     pub_sys_enable_.publish(msg);
-    change = true;
   }
   prev_enable_ = en;
   return change;
@@ -1380,6 +1379,12 @@ bool DbwNode::publishDbwEnabled()
 
 void DbwNode::timerCallback(const ros::TimerEvent& event)
 {
+  // Publish status periodically, in addition to latched and on change
+  if (publishDbwEnabled(true)) {
+    ROS_WARN("DBW system enable status changed unexpectedly");
+  }
+
+  // Clear override statuses if necessary
   if (clear()) {
     can_msgs::Frame out;
     out.is_extended = false;
