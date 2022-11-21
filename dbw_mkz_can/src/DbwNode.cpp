@@ -444,14 +444,12 @@ void DbwNode::recvCAN(const can_msgs::Frame::ConstPtr& msg)
               break;
             case 2:
               ts.transmission_state = 3;
-              reversed = true;
               break;
             case 3:
               ts.transmission_state = 0;
               break;
             case 4:
               ts.transmission_state = 2;
-              reversed = false;
               break;
           }
           if (msg->dlc >= sizeof(MsgGearReport)) {
