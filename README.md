@@ -81,8 +81,7 @@ Publication frequencies are provided for a Dataspeed Drive-by-Wire Kit installed
 * `vehicle/traction_ctrl_active [std_msgs/Bool]`: publishes True if the vehicle's [traction control system (TCS)](https://en.wikipedia.org/wiki/Traction_control_system) is active, False otherwise (50 Hz).
 * `vehicle/traction_ctrl_enabled [std_msgs/Bool]`: publishes True if the vehicle's [traction control system (TCS)](https://en.wikipedia.org/wiki/Traction_control_system) is enabled, False otherwise (50 Hz).
 * `vehicle/transmission_state [j2735_msgs/TransmissionState]`: publishes the current state of the vehicle's transmission (20 Hz).
-* `vehicle/twist [geometry_msgs/TwistStamped]`: publishes the absolute value of the vehicle's current twist (velocity in free space broken down into its linear and angular parts) (100 Hz).
-* `vehicle/signed_twist [geometry_msgs/TwistStamped]`: publishes the vehicle's current twist (velocity in free space broken down into its linear and angular parts) with correct signs (i.e. negative linear velocity when driving in reverse) (100 Hz).
+* `vehicle/twist [geometry_msgs/TwistStamped]`: publishes the vehicle's current twist (velocity in free space broken down into its linear and angular parts) (100 Hz).
 * `vehicle/vin [std_msgs/String]`: publishes the [vehicle identification number (VIN)](https://en.wikipedia.org/wiki/Vehicle_identification_number).
 * `vehicle/wheel_position_report [dbw_mkz_msgs/WheelPositionReport]`: publishes individual wheel positions (50 Hz).
 * `vehicle/wheel_speed_report [dbw_mkz_msgs/WheelSpeedReport]`: publishes individual wheel speeds (100 Hz).
