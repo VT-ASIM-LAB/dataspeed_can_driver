@@ -57,7 +57,7 @@
       <remap from="stability_ctrl_active" to="$(arg carma_ns)/can/stability_ctrl_active"/>
       <remap from="stability_ctrl_enabled" to="$(arg carma_ns)/can/stability_ctrl_enabled"/>
       <remap from="parking_brake" to="$(arg carma_ns)/can/parking_brake"/>
-      <remap from="signed_twist" to="$(arg carma_ns)/vehicle/twist"/>
+      <remap from="twist" to="$(arg carma_ns)/vehicle/twist"/>
       <remap from="discovery" to="$(arg carma_ns)/driver_discovery"/>
       <param name="frame_id" value="$(arg frame_id)" />
       <param name="warn_cmds" value="$(arg warn_cmds)" />

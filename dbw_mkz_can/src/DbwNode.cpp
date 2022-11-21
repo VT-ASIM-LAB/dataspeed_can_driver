@@ -213,7 +213,6 @@ DbwNode::DbwNode(ros::NodeHandle &node, ros::NodeHandle &priv_nh)
   pub_stability_ctrl_active_ = node.advertise<std_msgs::Bool>("stability_ctrl_active", 10);
   pub_stability_ctrl_enabled_ = node.advertise<std_msgs::Bool>("stability_ctrl_enabled", 10);
   pub_parking_brake_ = node.advertise<std_msgs::Bool>("parking_brake", 10);
-  pub_signed_twist_ = node.advertise<geometry_msgs::TwistStamped>("signed_twist", 10);
   pub_discovery_ = node.advertise<cav_msgs::DriverStatus>("discovery", 10);
 
   // Publish joint states if enabled
@@ -236,12 +235,6 @@ DbwNode::DbwNode(ros::NodeHandle &node, ros::NodeHandle &priv_nh)
 
   // Setup Timer
   timer_ = node.createTimer(ros::Duration(1 / 20.0), &DbwNode::timerCallback, this);
-
-  // Set Up Signed Twist
-  bool reversed = false;
-  double signed_twist_speed = 0.0;
-  double signed_twist_yaw_rate = 0.0;
-  geometry_msgs::TwistStamped signed_twist;
 
   // Set Up Driver Discovery
   cav_msgs::DriverStatus msg_discovery;
@@ -394,10 +387,10 @@ void DbwNode::recvCAN(const can_msgs::Frame::ConstPtr& msg)
           } else {
             out.steering_wheel_torque = (float)ptr->TORQUE * (float)0.0625;
           }
-          if (ptr->SPEED == 0xFFFF) {
+          if ((uint16_t)ptr->VEH_VEL == 0x8000) {
             out.speed = NAN;
           } else {
-            out.speed = (float)ptr->SPEED * (float)(0.01 / 3.6) * (float)speedSign();
+            out.speed = (float)ptr->VEH_VEL * (float)(0.01 / 3.6);
           }
           out.enabled = ptr->ENABLED ? true : false;
           out.override = ptr->OVERRIDE ? true : false;
@@ -418,19 +411,6 @@ void DbwNode::recvCAN(const can_msgs::Frame::ConstPtr& msg)
           twist.header.frame_id = frame_id_;
           twist.twist.linear.x = out.speed;
           twist.twist.angular.z = out.speed * tan(out.steering_wheel_angle / steering_ratio_) / acker_wheelbase_;
-          signed_twist.header.stamp = out.header.stamp;
-          signed_twist.header.frame_id = frame_id_;
-          signed_twist_speed = out.speed;
-          signed_twist_yaw_rate = out.speed * tan(out.steering_wheel_angle / steering_ratio_) / acker_wheelbase_;
-          pub_twist_.publish(twist);
-          if (reversed) {
-            signed_twist.twist.linear.x = -signed_twist_speed;
-            signed_twist.twist.angular.z = -signed_twist_yaw_rate;
-          } else {
-            signed_twist.twist.linear.x = signed_twist_speed;
-            signed_twist.twist.angular.z = signed_twist_yaw_rate;
-          }
-          pub_signed_twist_.publish(signed_twist);
           if (enable_joint_states_) {
             publishJointStates(msg->header.stamp, NULL, &out);
           }
