@@ -411,6 +411,7 @@ void DbwNode::recvCAN(const can_msgs::Frame::ConstPtr& msg)
           twist.header.frame_id = frame_id_;
           twist.twist.linear.x = out.speed;
           twist.twist.angular.z = out.speed * tan(out.steering_wheel_angle / steering_ratio_) / acker_wheelbase_;
+          pub_twist_.publish(twist);
           if (enable_joint_states_) {
             publishJointStates(msg->header.stamp, NULL, &out);
           }
